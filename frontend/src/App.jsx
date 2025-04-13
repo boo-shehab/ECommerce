@@ -9,6 +9,7 @@ import CollectionPage from "./pages/CollectionPage"
 import ProductDetails from "./components/Products/ProductDetails"
 import Checkout from "./components/Cart/Checkout"
 import OrderConfirmationPage from "./pages/OrderConfirmationPage"
+import OrderDetailsPage from "./pages/orderDetailsPage"
 
 function App() {
   const router = createBrowserRouter([{
@@ -45,6 +46,10 @@ function App() {
     {
       path: 'order-confirmation',
       element: <OrderConfirmationPage />
+    },
+    {
+      path: 'order/:id',
+      element: <OrderDetailsPage />
     }]
   }])
   return (
