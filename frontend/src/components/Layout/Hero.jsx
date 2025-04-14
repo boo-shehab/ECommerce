@@ -1,4 +1,3 @@
-import React from 'react'
 import imageHero from '../../assets/rabbit-hero.webp'
 import { Link } from 'react-router-dom'
 const Hero = () => {

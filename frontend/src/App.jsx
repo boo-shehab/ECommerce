@@ -10,48 +10,67 @@ import ProductDetails from "./components/Products/ProductDetails"
 import Checkout from "./components/Cart/Checkout"
 import OrderConfirmationPage from "./pages/OrderConfirmationPage"
 import OrderDetailsPage from "./pages/orderDetailsPage"
+import MyOrderPage from "./pages/MyOrderPage"
+import AdminLayout from "./components/Admin/AdminLayout"
+import AdminHomePage from "./pages/AdminHomePage"
 
 function App() {
-  const router = createBrowserRouter([{
-    path: '/',
-    element: <UserLayout />,
-    children: [{
+  const router = createBrowserRouter([
+    {
       path: '/',
-      element: <Home />
+      element: <UserLayout />,
+      children: [{
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'register',
+        element: <Register />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
+      },
+      {
+        path: 'collections/:collection',
+        element: <CollectionPage />
+      },
+      {
+        path: 'product/:id',
+        element: <ProductDetails />
+      },
+      {
+        path: 'checkout',
+        element: <Checkout />
+      },
+      {
+        path: 'order-confirmation',
+        element: <OrderConfirmationPage />
+      },
+      {
+        path: 'order/:id',
+        element: <OrderDetailsPage />
+      },
+      {
+        path: 'my-orders',
+        element: <MyOrderPage />
+      }]
     },
     {
-      path: 'login',
-      element: <Login />
-    },
-    {
-      path: 'register',
-      element: <Register />
-    },
-    {
-      path: 'profile',
-      element: <Profile />
-    },
-    {
-      path: 'collections/:collection',
-      element: <CollectionPage />
-    },
-    {
-      path: 'product/:id',
-      element: <ProductDetails />
-    },
-    {
-      path: 'checkout',
-      element: <Checkout />
-    },
-    {
-      path: 'order-confirmation',
-      element: <OrderConfirmationPage />
-    },
-    {
-      path: 'order/:id',
-      element: <OrderDetailsPage />
-    }]
-  }])
+      path: '/admin',
+      element: <AdminLayout />,
+      children: [
+        {
+          path: '/admin',
+          element: <AdminHomePage />
+        }
+      ]
+    }
+  ])
   return (
     <>
       <Toaster position="top-right"/>
