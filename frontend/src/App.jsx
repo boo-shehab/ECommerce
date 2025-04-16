@@ -9,12 +9,14 @@ import CollectionPage from "./pages/CollectionPage"
 import ProductDetails from "./components/Products/ProductDetails"
 import Checkout from "./components/Cart/Checkout"
 import OrderConfirmationPage from "./pages/OrderConfirmationPage"
-import OrderDetailsPage from "./pages/orderDetailsPage"
 import MyOrderPage from "./pages/MyOrderPage"
 import AdminLayout from "./components/Admin/AdminLayout"
 import AdminHomePage from "./pages/AdminHomePage"
 import UserManagement from "./components/Admin/UserManagement"
 import ProductManagement from "./components/Admin/ProductManagement"
+import EditProductPage from "./components/Admin/EditProductPage"
+import OrderDetailsPage from "./pages/OrderDetailsPage"
+import OrderManagement from "./components/Admin/OrderManagement"
 
 function App() {
   const router = createBrowserRouter([
@@ -77,6 +79,14 @@ function App() {
         {
           path: '/admin/products',
           element: <ProductManagement />
+        },
+        {
+          path: '/admin/products/:id/edit',
+          element: <EditProductPage />
+        },
+        {
+          path: '/admin/orders',
+          element: <OrderManagement />
         }
       ]
     }
