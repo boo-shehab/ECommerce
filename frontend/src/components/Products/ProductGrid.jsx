@@ -6,7 +6,7 @@ const ProductGrid = ({products}) => {
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
 
         {products.map((product) => (
-            <Link key={product._id} to={product.id} className='block'>
+            <Link key={product._id} to={`/product/${product._id}`} className='block'>
                 <div className='bg-white rounded-lg p-4'>
                     <div className='w-full h-96 mb-4'>
                         <img 

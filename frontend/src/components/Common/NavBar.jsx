@@ -22,13 +22,13 @@ const NavBar = () => {
                 <Link to="/" className='text-2xl font-medium'>Rabbit</Link>
             </div>
             <div className='hidden md:flex space-x-6'>
-                <Link to="/collections/all" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>Men</Link>
+                <Link to="/collections/all?gender=Men" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>Men</Link>
                 
-                <Link to="*" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>women</Link>
+                <Link to="/collections/all?gender=Women" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>women</Link>
                 
-                <Link to="*" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>top wear</Link>
+                <Link to="/collections/all?category=top+wear" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>top wear</Link>
                 
-                <Link to="*" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>bottom wear</Link>
+                <Link to="/collections/all?category=bottom+wear" className='text-gray-700 hover:text-black text-sm font-medium uppercase'>bottom wear</Link>
             </div>
             <div className='flex items-center space-x-4'>
                 <Link to='/admin' className='block bg-black text-white px-2 rounded text-sm'>Admin
@@ -57,9 +57,9 @@ const NavBar = () => {
                 <h2 className='text-xl font-semibold mb-4'>Menu</h2>
                 <nav>
                 <Link to="/collections/all" onClick={toggleNavDrawer} className='block text-gray-600 hover:text-black'>Men</Link>
-                <Link to="#" onClick={toggleNavDrawer} className='block text-gray-600 hover:text-black'>Women</Link>
-                <Link to="#" onClick={toggleNavDrawer} className='block text-gray-600 hover:text-black'>Top wear</Link>
-                <Link to="#" onClick={toggleNavDrawer} className='block text-gray-600 hover:text-black'>bottom wear</Link>
+                <Link to="/collections/all?gender=Women" onClick={toggleNavDrawer} className='block text-gray-600 hover:text-black'>Women</Link>
+                <Link to="/collections/all?category=top+wear" onClick={toggleNavDrawer} className='block text-gray-600 hover:text-black'>Top wear</Link>
+                <Link to="/collections/all?category=bottom+wear" onClick={toggleNavDrawer} className='block text-gray-600 hover:text-black'>bottom wear</Link>
                 </nav>
             </div>
         </div>
